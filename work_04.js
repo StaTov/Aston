@@ -128,20 +128,22 @@
 //    сделать класс наследник от класса Person.
 {
     class PersonThree {
+        name
         constructor(name) {
             this.name = name
         }
         get name() {
-            return this._name
+            return this.name
         }
         set name(value) {
-            this._name = value
+            this.name = value
         }
     }
 
     const person = new PersonThree('Ann')
-    console.log(person.name) // Ann
+    console.log('person.name: ', person.name) // Ann
     person.name = 'Ivan'  // Ivan
+    console.log('person.name: ', person.name) // Ivan
 
     class PersonWithAge extends PersonThree {
         constructor(name, age) {
@@ -151,7 +153,7 @@
     }
 
     const person2 = new PersonWithAge('Boris', 32)
-    console.log(person2)  // PersonWithAge { _name: 'Boris', age: 32 }
+    console.log(person2)  // PersonWithAge { name: 'Boris', age: 32 }
 }
 
 ///////////////////////////////////////////////////////////////////////
